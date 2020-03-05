@@ -1,0 +1,23 @@
+{
+  "name": "mdlinks",
+  "version": "1.0.0",
+  "description": "\"Library for Markdown Links\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anapaulaoliva/mdLinks.git"
+  },
+  "keywords": [
+    "markdown",
+    "links"
+  ],
+  "author": "Ana Paula Oliva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anapaulaoliva/mdLinks/issues"
+  },
+  "homepage": "https://github.com/anapaulaoliva/mdLinks#readme"
+}
