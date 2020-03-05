@@ -4,7 +4,7 @@
   "description": "\"Library for Markdown Links\"",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/anapaulaoliva/mdLinks/issues"
   },
-  "homepage": "https://github.com/anapaulaoliva/mdLinks#readme"
+  "homepage": "https://github.com/anapaulaoliva/mdLinks#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0"
+  },
+  "dependencies": {
+    "editorconfig": "^0.15.3"
+  }
 }
