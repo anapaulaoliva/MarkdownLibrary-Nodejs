@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const readFileToString = (path) => {
+module.exports.readFileToString = (path) => {
 
     return new Promise((resolve, reject) => {
         fs.readFile(path, 'utf8', (err, data) => {
@@ -11,5 +11,3 @@ const readFileToString = (path) => {
         })
     })
 }
-
-module.exports = { readFileToString };
