@@ -2,7 +2,10 @@
   "name": "mdlinks",
   "version": "1.0.0",
   "description": "\"Library for Markdown Links\"",
-  "main": "app.js",
+  "main": "index.js",
+  "bin": {
+    "mdlinks": "./cli.js"
+  },
   "scripts": {
     "test": "jest"
   },
