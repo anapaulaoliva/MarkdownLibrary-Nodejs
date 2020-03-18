@@ -1,5 +1,6 @@
 const { readFileToString } = require('./scripts/readFileToString.js');
 const { extractLinks } = require('./scripts/extractLinks.js');
+const { getStatusLink } = require('./scripts/getStatusLink.js')
 
 module.exports.mdLinks = (path, options = { validate: false, stats: false }) => {
 
@@ -14,4 +15,8 @@ module.exports.mdLinks = (path, options = { validate: false, stats: false }) => 
         })
         .catch(reject);
         })
+
+        if (options = {validate: true, stats: false }){
+            const httpStatusLinks = getStatusLink(response)
+        }
 }
