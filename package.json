@@ -28,6 +28,7 @@
     "jest": "^25.1.0"
   },
   "dependencies": {
-    "editorconfig": "^0.15.3"
+    "editorconfig": "^0.15.3",
+    "node-fetch": "^2.6.0"
   }
 }
