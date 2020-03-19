@@ -8,7 +8,7 @@ const options = {
     stats: process.argv.includes('--stats') || process.argv.includes('-s')
 }
 
-mdLinks(path, {validate: false, stats: false}).then((data) => {
+mdLinks(path, options).then((data) => {
     console.log(data);
     
 }).catch((err) => {
