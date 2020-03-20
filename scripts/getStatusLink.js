@@ -3,7 +3,9 @@ const fetch = require('node-fetch');
 module.exports.getStatusLink = (array) => {
 
     return new Promise((resolve, reject)=> {
-        const newArray =array.map( (element) => {
+        
+        const newArray = array.map( (element) => {
+            
             return new Promise((resolve, reject)=> {
                 
                 fetch(element.href)
@@ -17,14 +19,16 @@ module.exports.getStatusLink = (array) => {
                     resolve(object);
                 })
                 .catch((err)=>{
-                    reject("Error at node-fetch request", err)
+                    reject("Error at element.href fetch", err)
                 })
             })
         })        
         Promise.all(newArray).then((res)=> {
-
             resolve(res);
         
+        })
+        .catch((err) => {
+            reject("Error at node-fetch request", err)
         })
     });
 
