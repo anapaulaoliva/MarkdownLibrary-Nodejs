@@ -25,11 +25,4 @@ module.exports.mdLinks = (path, options = { validate: false, stats: false }) => 
         })
         .catch(reject);
         })
-
-        /*pseudocodigo
-        if (options =  {validate: true, stats: false }){
-            const httpStatusLinks = getStatusLink(response)
-        }*/
 }
-
-
