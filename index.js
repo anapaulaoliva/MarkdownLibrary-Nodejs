@@ -7,28 +7,56 @@ module.exports.mdLinks = (path, options = { validate: false, stats: false }) => 
     return new Promise((resolve, reject) => {
         readFileToString(path)
         .then((response) => {
+
             return extractLinks(response, path)
         })
         .then(response => {
+
             if (options.validate && options.stats) {
-                
-                return getStatusLink(response)
-            } else if(options.validate) {
+
+                return getStatusLink(response);
+
+            } else if (options.validate) {
 
                 resolve(getStatusLink(response))
-            } else if(options.stats) {
-                
+
+            } else if (options.stats) {
+
                 let chart = {
-                    "Total Links": response.length
+                    "Total": response.length,
+                    "Unique": response.length
                 }
-                let statsChart = console.table(chart);
-                resolve(statsChart)
+                resolve(console.table(chart))
             }
-            resolve(response);
+
+        resolve(response);
         })
-        .then((response) => {
-            resolve("Conteo de los links mas el conteo de links rotos osea validados", response)
+
+        .then((linksObj) => {
+
+            let chart = {
+                "Total": linksObj.length,
+                "Unique": 0,
+                "Broken": 0
+            }
+            linksObj.forEach((item) => {
+
+                if (item.StatusText == 'Not Found') {
+                    chart.Broken++;
+                } else if (item.StatusText == 'OK') {
+                    chart.Unique++;
+                }
+            })
+            
+            console.table(chart)
+            return chart;
         })
+        /*.then((chart) => {
+            if (options.stats) {
+            delete chart.Broken;
+            console.table(chart)
+            }
+        })*/
         .catch(reject);
         })
 }
