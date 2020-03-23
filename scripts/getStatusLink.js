@@ -8,11 +8,11 @@ module.exports.getStatusLink = (array) => {
             
             return new Promise((resolve, reject)=> {
                 
-                fetch(element.href)
+                fetch(element.Href)
                 .then((res) => {
                     let object = {
                         Href: res.url,
-                        Text: element.text,
+                        Text: element.Text,
                         Status: res.status,
                         StatusText: res.statusText
                         };
