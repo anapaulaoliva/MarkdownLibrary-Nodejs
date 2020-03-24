@@ -10,8 +10,8 @@ const extractLinks = (parsedFile, path) => {
         const arrObject = matchedLinksArr.map((item) => {
 
             const objectLink = {
-                text: item.slice(1,item.indexOf(']')),
-                href: item.slice(item.indexOf('(') +1, item.indexOf(')')),
+                Text: item.slice(1,item.indexOf(']')),
+                Href: item.slice(item.indexOf('(') +1, item.indexOf(')')),
                 path,
             }
 
