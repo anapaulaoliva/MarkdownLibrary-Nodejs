@@ -51,12 +51,6 @@ module.exports.mdLinks = (path, options = { validate: false, stats: false }) => 
             console.table(chart)
             return chart;
         })
-        /*.then((chart) => {
-            if (options.stats) {
-            delete chart.Broken;
-            console.table(chart)
-            }
-        })*/
         .catch(reject);
         })
 }
